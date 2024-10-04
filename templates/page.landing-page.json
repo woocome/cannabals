@@ -20,18 +20,119 @@
     "cnb_hero_Ye9Kn7": {
       "type": "cnb-hero",
       "settings": {
+        "bg_image": "shopify://shop_images/cannabals-hero-image.webp",
         "hero_title": "Turn up the flavor, New York!",
         "hero_description": "Partner with us to give your customers the perfect mix of chill and get lit moments they deserve!.",
-        "button_text": "Shop Now",
+        "button_text": "Find A Store",
         "button_link": "shopify://collections/all",
         "bg_background_color": "",
         "desktop_content_alignment": "center",
         "color_scheme": ""
       }
+    },
+    "cnb_lineups_iyfH4C": {
+      "type": "cnb-lineups",
+      "settings": {
+        "column_image": "shopify://shop_images/cannabals-cannabis-products.png",
+        "column_title": "STACK UP ON YOUR FAVES",
+        "column_content": "<p>We're Cannabals, the ultimate flavor factory bringing you the boldest, most delicious cannabis products in New York State. Our mission? To elevate your edible game with the perfect mix of fun, flavor, and a little New York attitude.</p>",
+        "section_title": "Peep the Lineup",
+        "collections": [
+          "brick",
+          "gummies"
+        ],
+        "button_text": "Shop Dispensaries",
+        "button_link": "shopify://collections/all",
+        "lineup_color_scheme": ""
+      }
+    },
+    "cnb_featured_puffs_JWL3bb": {
+      "type": "cnb-featured-puffs",
+      "settings": {
+        "left_image": "shopify://shop_images/cannabals-puffs.png",
+        "left_title": "Pressure Makes Piff",
+        "left_description": "5 premium pre-rolls, infused with diamonds for that extra kick. Ready to take your session to the next level?",
+        "button_url": "shopify://pages/contact",
+        "button_label": "Stay tuned for the drop",
+        "right_image": "shopify://shop_images/cannabals-cones-product-image.webp",
+        "color_scheme": ""
+      }
+    },
+    "cnb_cones_MhenNf": {
+      "type": "cnb-cones",
+      "settings": {
+        "header_image": "shopify://shop_images/cannabals-cones-featured-image.webp",
+        "left_image": "shopify://shop_images/cannabals-cones-product-image.webp",
+        "column_badge": "Coming Soon",
+        "column_title": "Get Coned With Us",
+        "column_description": "Get ready to be CONED! Our infused chocolate-filled waffle cone snacks are about to change the game. Available in Milk Chocolate, Dark Chocolate, and Birthday Cake, these cones are the sweet escape you've been waiting for.",
+        "button_url": "shopify://pages/contact",
+        "button_label": "Lock In For Updates",
+        "background_image": "shopify://shop_images/cannabals-cones-background-2x.jpg"
+      }
+    },
+    "image_with_text_zDCKTw": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_QtAmp8": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>EVERY BOROUGH, EVERY REGION.</strong>",
+            "heading_size": "h2"
+          }
+        },
+        "text_Enptdw": {
+          "type": "text",
+          "settings": {
+            "text": "<p>From the streets of NYC to the peaks of the Adirondacks, we're in every corner of the Empire State. Cop at your local dispensary or have your stash delivered right to your door. Cannabals is here to make sure you're  never too far from your next flavor fix.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_ziNqxA": {
+          "type": "button",
+          "settings": {
+            "button_label": "Find NYC Dispensaries",
+            "button_link": "shopify://pages/contact",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_QtAmp8",
+        "text_Enptdw",
+        "button_ziNqxA"
+      ],
+      "custom_css": [
+        ".grid {column-gap: var(--grid-desktop-horizontal-spacing);}",
+        ".grid .image-with-text__media-item {width: calc(37% - var(--grid-desktop-horizontal-spacing) / 2);}",
+        ".image-with-text__content {padding: 0;}",
+        ".image-with-text__heading {font-size: 4rem;}",
+        ".image-with-text__text {font-size: 2rem; line-height: 1; font-weight: bold; color: var(--secondary-color);}",
+        "@media screen and (min-width: 750px) {.image-with-text__text {font-size: 3.2rem; }}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/cannabals-every-region.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
     "main",
-    "cnb_hero_Ye9Kn7"
+    "cnb_hero_Ye9Kn7",
+    "cnb_lineups_iyfH4C",
+    "cnb_featured_puffs_JWL3bb",
+    "cnb_cones_MhenNf",
+    "image_with_text_zDCKTw"
   ]
 }
