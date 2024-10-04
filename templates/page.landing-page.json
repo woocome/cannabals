@@ -125,6 +125,84 @@
         "padding_top": 52,
         "padding_bottom": 52
       }
+    },
+    "collapsible_content_8EMnPK": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_X9q9QB": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is it legal to buy THC gummies online?",
+            "icon": "none",
+            "row_content": "<p>Absolutely! Our gummies are made from hemp-derived Delta-9 THC, which is federally legal under the 2018 Farm Bill. As long as you’re in a state where it’s allowed, we can ship our products directly to your door.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_bKW4R6": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How should I dose the gummies?",
+            "icon": "none",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_e3n9XD": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Are these products tested?",
+            "icon": "none",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_RiDR6L": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How fast do your gummies work?",
+            "icon": "none",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_XD9RCX": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do you ship your products?",
+            "icon": "none",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_X9q9QB",
+        "collapsible_row_bKW4R6",
+        "collapsible_row_e3n9XD",
+        "collapsible_row_RiDR6L",
+        "collapsible_row_XD9RCX"
+      ],
+      "custom_css": [
+        ".grid {--grid-desktop-horizontal-spacing: 50px; align-items: center;}",
+        ".collapsible-content__grid-item {padding-right: 20px;}",
+        ".collapsible-content summary .accordion__title {font-size: 2.4rem; text-decoration: none; color: #000;}",
+        ".accordion__content {font-size: 1.8rem; line-height: 1.3; padding: 0; color: #000; font-weight: 500;}"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "scheme-2",
+        "container_color_scheme": "scheme-89d2447d-a116-4ba2-96ce-c6537f7ee59a",
+        "open_first_collapsible_row": false,
+        "image": "shopify://shop_images/cannabals-faq.webp",
+        "image_ratio": "adapt",
+        "desktop_layout": "image_first",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
     }
   },
   "order": [
@@ -133,6 +211,7 @@
     "cnb_lineups_iyfH4C",
     "cnb_featured_puffs_JWL3bb",
     "cnb_cones_MhenNf",
-    "image_with_text_zDCKTw"
+    "image_with_text_zDCKTw",
+    "collapsible_content_8EMnPK"
   ]
 }
