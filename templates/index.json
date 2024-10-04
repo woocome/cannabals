@@ -99,7 +99,8 @@
         ".grid .image-with-text__media-item {width: calc(37% - var(--grid-desktop-horizontal-spacing) / 2);}",
         ".image-with-text__content {padding: 0;}",
         ".image-with-text__heading {font-size: 4rem;}",
-        ".image-with-text__text {font-size: 3.2rem; line-height: 1; font-weight: bold; color: var(--secondary-color);}"
+        ".image-with-text__text {font-size: 2rem; line-height: 1; font-weight: bold; color: var(--secondary-color);}",
+        "@media screen and (min-width: 750px) {.image-with-text__text {font-size: 3.2rem; }}"
       ],
       "settings": {
         "image": "shopify://shop_images/cannabals-every-region.webp",
