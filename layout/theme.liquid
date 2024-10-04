@@ -34,6 +34,9 @@
     <script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'search-form.js' | asset_url }}" defer="defer"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
 
     {%- if settings.animations_reveal_on_scroll -%}
       <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
@@ -95,7 +98,7 @@
       {% endfor %}
 
       {{ scheme_classes | prepend: 'body' }} {
-        color: rgba(var(--color-foreground), 0.75);
+        color: rgba(var(--color-foreground), 1);
         background-color: rgb(var(--color-background));
       }
 
@@ -105,12 +108,15 @@
         --font-body-weight: {{ settings.type_body_font.weight }};
         --font-body-weight-bold: {{ settings.type_body_font.weight | plus: 300 | at_most: 1000 }};
 
-        --font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
+        --font-heading-family: "{{ settings.type_header_font.family }}", {{ settings.type_header_font.fallback_families }};
         --font-heading-style: {{ settings.type_header_font.style }};
         --font-heading-weight: {{ settings.type_header_font.weight }};
 
         --font-body-scale: {{ settings.body_scale | divided_by: 100.0 }};
         --font-heading-scale: {{ settings.heading_scale | times: 1.0 | divided_by: settings.body_scale }};
+
+        --primary-color: {{ settings.primary_color }};
+        --secondary-color: {{ settings.secondary_color }};
 
         --media-padding: {{ settings.media_padding }}px;
         --media-border-opacity: {{ settings.media_border_opacity | divided_by: 100.0 }};
@@ -228,6 +234,13 @@
         box-sizing: inherit;
       }
 
+      @font-face {
+        font-family: 'ArchivoBlack-Regular';
+        src: url('{{ 'ArchivoBlack-Regular.ttf' | asset_url }}') format('ttf');
+        font-weight: normal;
+        font-style: normal;
+      }
+
       html {
         box-sizing: border-box;
         font-size: calc(var(--font-body-scale) * 62.5%);
@@ -246,6 +259,10 @@
         font-family: var(--font-body-family);
         font-style: var(--font-body-style);
         font-weight: var(--font-body-weight);
+      }
+
+      h1 {
+        --font-heading-family: {{ settings.type_header_font_custom }}, sans-serif;
       }
 
       @media screen and (min-width: 750px) {

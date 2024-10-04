@@ -54,7 +54,18 @@
                   style="--animation-order: {{ forloop.index }};"
                 {% endif %}
               >
+              <div class="field field--2-col-tablet">
+                <p class="field__input-label">First name</p>
+                <input class="field__input" autocomplete="name" type="text" id="ContactForm-first_name" name="contact[first_name]" value="{% if form.first_name %}{{ form.first_name }}{% elsif customer %}{{ customer.first_name }}{% endif %}" placeholder="{{ 'customer.register.first_name' | t }}">
+                <label class="field__label" for="ContactForm-first_name">{{ 'customer.register.first_name' | t }}</label>
+              </div>
+              <div class="field field--2-col-tablet">
+                <p class="field__input-label">Last name</p>
+                <input class="field__input" autocomplete="name" type="text" id="ContactForm-last_name" name="contact[last_name]" value="{% if form.last_name %}{{ form.last_name }}{% elsif customer %}{{ customer.last_name }}{% endif %}" placeholder="{{ 'customer.register.last_name' | t }}">
+                <label class="field__label" for="ContactForm-last_name">{{ 'customer.register.last_name' | t }}</label>
+              </div>
                 <div class="field">
+                  <p class="field__input-label">Email</p>
                   <input
                     id="NewsletterForm--{{ section.id }}"
                     type="email"
@@ -78,18 +89,16 @@
                   <label class="field__label" for="NewsletterForm--{{ section.id }}">
                     {{ 'newsletter.label' | t }}
                   </label>
-                  <button
-                    type="submit"
-                    class="newsletter-form__button field__button"
-                    name="commit"
-                    id="Subscribe"
-                    aria-label="{{ 'newsletter.button_label' | t }}"
-                  >
-                    <span class="svg-wrapper">
-                      {{- 'icon-arrow.svg' | inline_asset_content -}}
-                    </span>
-                  </button>
                 </div>
+                <button
+                  type="submit"
+                  name="commit"
+                  id="Subscribe"
+                  aria-label="{{ 'newsletter.button_label' | t }}"
+                  class="button button--primary newsletter-form__submit-button"
+                >
+                  Submit
+                </button>
                 {%- if form.errors -%}
                   <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">
                     <span class="svg-wrapper">

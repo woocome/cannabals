@@ -37,6 +37,18 @@
     "name": "t:settings_schema.colors.name",
     "settings": [
       {
+        "type": "color",
+        "id": "primary_color",
+        "label": "Primary Color",
+        "default": "#0A213E"
+      },
+      {
+        "type": "color",
+        "id": "secondary_color",
+        "label": "Secondary Color",
+        "default": "#F6B333"
+      },
+      {
         "type": "color_scheme_group",
         "id": "color_schemes",
         "definition": [
@@ -114,6 +126,23 @@
         "default": "assistant_n4",
         "label": "t:settings_schema.typography.settings.type_header_font.label",
         "info": "t:settings_schema.typography.settings.type_header_font.info"
+      },
+      {
+        "type": "select",
+        "id": "type_header_font_custom",
+        "default": "Gotham Pro",
+        "label": "t:settings_schema.typography.settings.type_header_font.label",
+        "info": "Custom Font",
+        "options": [
+          {
+            "value": "Gotham Pro",
+            "label": "Gotham Pro"
+          },
+          {
+            "value": "Archivo Black",
+            "label": "ArchivoBlack"
+          }
+        ]
       },
       {
         "type": "range",
@@ -265,7 +294,7 @@
         "id": "buttons_radius",
         "min": 0,
         "max": 40,
-        "step": 2,
+        "step": 1,
         "unit": "px",
         "label": "t:settings_schema.global.settings.corner_radius.label",
         "default": 0

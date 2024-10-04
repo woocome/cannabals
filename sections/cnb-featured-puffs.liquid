@@ -1,0 +1,166 @@
+<style>
+  .cnb-featured-puff {
+    margin-top: -55px;
+    margin-bottom: -55px;
+    position: relative;
+  }
+
+  .cnb-featured-puff .cnb-inner-container {
+    width: 1325px;
+    border-radius: 30px;
+    padding-left: 2rem;
+    max-width: 90vw;
+  }
+
+  .cnb-featured-puff .grid {
+      align-items: center;
+  }
+
+  .cnb-featured-puff .cnb-column--first {
+    padding: 2rem 0;
+  }
+
+  .cnb-column--first .cnb-column_image {
+    max-width: 430px;
+    width: 75%;
+  }
+
+  .cnb-column--second .cnb-column_image {
+    margin-top: -96px;
+    width: 90%;
+    display: none;
+  }
+
+  .cnb-column--second .cnb-column_image img {
+    max-width: 550px;
+    width: 100%;
+    transform: rotate(-22.22deg);
+    --color-background: transparent;
+  }
+
+  .cnb-featured-puff .cnb-column_title {
+    font-size: 4.1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 1;
+  }
+
+  .cnb-featured-puff .cnb-column_description {
+    line-height: normal;
+  }
+
+  @media only screen and (min-width: 1325px) {
+    .cnb-column--second .cnb-column_image {
+      width: auto;
+      width: 100%;
+    }
+  }
+
+  @media only screen and (min-width: 990px) {
+    ..cnb-featured-puff .cnb-inner-container {
+      padding-left: 5rem;
+    }
+
+    .cnb-featured-puff .cnb-column--first {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    .cnb-column--second .cnb-column_image {
+      display: block;
+    }
+  }
+
+</style>
+<section class="cnb-section cnb-featured-puff">
+  <div class="page-width cnb-inner-container color-{{ section.settings.color_scheme }}">
+    <div class="grid grid--1-col grid--2-col-desktop">
+      
+      <div class="grid__item cnb-column--first">
+        {% if section.settings.left_image %}
+          <div class="cnb-column_image">
+            {% render 'cnb-image', media: section.settings.left_image %}
+          </div>
+        {% endif %}
+        
+        {% if section.settings.left_title %}
+          <p class="cnb-column_title">{{ section.settings.left_title }}</p>
+        {% endif %}
+        
+        {% if section.settings.left_description %}
+          <p class="cnb-column_description">{{ section.settings.left_description }}</p>
+        {% endif %}
+        
+        {% if section.settings.button_url and section.settings.button_label %}
+          <a href="{{ section.settings.button_url }}" class="button button--primary">{{ section.settings.button_label }}</a>
+        {% endif %}
+
+      </div>
+      
+      <div class="grid__item cnb-column--second">
+        {% if section.settings.right_image %}
+          <div class="cnb-column_image">
+            {% render 'cnb-image', media: section.settings.right_image %}
+          </div>
+        {% endif %}
+      </div>
+      
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Featured Puffs",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Left Column Image"
+    },
+    {
+      "type": "text",
+      "id": "left_title",
+      "label": "Left Column Title",
+      "default": "Enter your title here"
+    },
+    {
+      "type": "textarea",
+      "id": "left_description",
+      "label": "Left Column Description",
+      "default": "Enter your description here"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Learn More"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_image",
+      "label": "Right Column Image"
+    },
+    {
+        "type": "header",
+        "content": "Styling"
+    },
+    {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "t:sections.all.colors.label",
+        "default": "scheme-4"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Puffs",
+      "category": "Cannabals"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,179 @@
+<style>
+  .cnb-cones {
+    background-position: top center;
+    background-size: cover;
+    padding-top: 120px;
+    padding-bottom: 50px;
+    background-repeat: no-repeat;
+  }
+
+  .cnb-column_header-image {
+    --color-background: transparent;
+    display: block;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .cnb-column_image {
+    max-width: 380px;
+    margin: auto;
+  }
+
+  .cnb-column_badge {
+    padding: 10px 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: var(--secondary-color);
+    display: inline-block;
+    line-height: 1;
+    font-size: 2.4rem;
+    font-family: 'Archivo Black', sans-serif;
+    transform: rotate(4.15deg);
+    color: var(--primary-color);
+  }
+
+  .cnb-cones .cnb-column_title {
+    font-size: 5rem;
+    line-height: 1;
+    margin: 0;
+    text-transform: uppercase;
+    font-family: 'Archivo Black', sans-serif;
+    color: #ffff;
+  }
+
+  .cnb-cones .cnb-column_description {
+    font-weight: bold;
+    line-height: 1;
+    color: var(--primary-color);
+  }
+
+  @media screen and (min-width: 990px) {
+    .cnb-cones {
+      padding-top: 165px;
+      padding-bottom: 0;
+    }
+
+    .cnb-column_header-image {
+      max-width: 625px;
+      margin-bottom: -165px;
+    }
+  
+    .cnb-column_image {
+      max-width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 989px) and (min-width: 750px) {
+    .cnb-column_image {
+      max-width: 320px;
+    }
+
+    .grid--1-col > .grid__item {
+      flex-basis: auto;
+      max-width: 100%;
+      width: min-content;
+    }
+  }
+</style>
+<section class="cnb-section cnb-cones" style="background-image: url({{ section.settings.background_image | image_url }});">
+  <div class="page-width">
+    <div class="grid grid--1-col">
+      <div class="cnb-column_header-image">
+        {% render 'cnb-image', media: section.settings.header_image %}
+      </div>
+    </div>
+    <div class="grid grid--2-col-desktop grid--1-col grid--items-center">
+      <div class="grid__item">
+          {% if section.settings.left_image %}
+          <div class="cnb-column_image">
+              {% render 'cnb-image', media: section.settings.left_image %}
+          </div>
+          {% endif %}
+      </div>
+      
+      <div class="grid__item">
+        {% if section.settings.column_badge %}
+          <div class="right">
+            <p class="cnb-column_badge">{{ section.settings.column_badge }}</p>
+          </div>
+        {% endif %}
+        {% if section.settings.column_title %}
+        <h2 class="cnb-column_title">{{ section.settings.column_title }}</h2>
+        {% endif %}
+        
+        {% if section.settings.column_description %}
+        <p class="cnb-column_description">{{ section.settings.column_description }}</p>
+        {% endif %}
+        
+        {% if section.settings.button_url and section.settings.button_label %}
+        <a href="{{ section.settings.button_url }}" class="button button--primary">{{ section.settings.button_label }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Cones",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "header_image",
+      "label": "Section Header Image"
+    },
+    {
+      "type": "header",
+      "content": "Column Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Left Column Image"
+    },
+    {
+      "type": "text",
+      "id": "column_badge",
+      "label": "Left Column Title",
+      "default": "Enter your title here"
+    },
+    {
+      "type": "text",
+      "id": "column_title",
+      "label": "Left Column Title",
+      "default": "Enter your title here"
+    },
+    {
+      "type": "textarea",
+      "id": "column_description",
+      "label": "Left Column Description",
+      "default": "Enter your description here"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Learn More"
+    },
+    {
+      "type": "header",
+      "content": "Styling"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cones",
+      "category": "Cannabals"
+    }
+  ]
+}
+{% endschema %}

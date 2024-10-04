@@ -1,0 +1,78 @@
+<section class="cnb-section cnb-faq">
+    <div class="page-width">
+      <div class="grid grid--2-col">
+        <div class="grid__item">
+          {% if section.settings.left_image %}
+            <div class="cnb-column_image">
+              <img src="{{ section.settings.left_image | img_url: '540x540' }}" alt="FAQ Image">
+            </div>
+          {% endif %}
+        </div>
+        
+        <!-- Right Column: FAQ Block -->
+        <div class="grid__item">
+          <div class="cnb-faq_block">
+            {% for block in section.blocks %}
+              <div class="cnb-faq_item">
+                <button class="faq-question" aria-expanded="false">
+                  {{ block.settings.question }}
+                </button>
+                <div class="cnb-faq_answer" hidden>
+                  <p>{{ block.settings.answer }}</p>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <script>
+    document.querySelectorAll('.faq-question').forEach((button) => {
+      button.addEventListener('click', () => {
+        const answer = button.nextElementSibling;
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', !isExpanded);
+        answer.hidden = isExpanded;
+      });
+    });
+  </script>
+  {% schema %}
+{
+  "name": "FAQ Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Left Column Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "What is your question?"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer",
+          "default": "This is the answer to the question."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ Section",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}

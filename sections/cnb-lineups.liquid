@@ -1,0 +1,230 @@
+<style>
+    .cnb-lineup {
+      --grid-desktop-horizontal-spacing: 50px;
+      background-image: linear-gradient(0deg,
+        #D74753 0%,
+        #E1757B 20%,
+        #E99D9E 30%,
+        #F0BDBB 40%,
+        #F5D6D1 60%,
+        #F9E8E0 70%,
+        #FBF2E9 80%,
+        #FCF6ED 100%
+      );
+      padding-top: 40px;
+      padding-bottom: 130px;
+      overflow: hidden;
+    }
+    .cnb-column_image .global-media-settings {
+      --color-background: transparent;
+    }
+
+    .cnb-lineup .grid--1-col {
+      --grid-desktop-horizontal-spacing: 50px;
+      --first-column-width: 40.3333%;
+      align-items: center;
+    }
+
+    .cnb-section_title {
+      margin-bottom: 70px;
+    }
+
+    .cnb-lineup .cnb-column_content {
+      font-size: 2.4rem;
+      line-height: normal;
+    }
+
+    .cnb-lineup .cnb-column_content p {
+      margin-top: 0;
+    }
+
+    .cnb-column_inner {
+      padding: 35px 0 35px 25px;
+      border-radius: 20px;
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+      align-items: center;
+    }
+
+    .cnb-lineup_content .collection-title {
+      font-size: 5.625rem;
+      margin: 0;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      line-height: 1;
+    }
+
+    .cnb-lineup_content .collection-owner {
+      font-size: 2.6rem;
+      margin: 0;
+      line-height: 1;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .cnb-lineup_content .collection-description {
+      line-height: 1;
+      margin-top: 25px;
+      font-size: 1.9rem;
+    }
+
+    .cnb-lineup .collection-image {
+      flex-basis: 100%;
+      flex-grow: 1;
+      order: -1;
+    }
+
+    .cnb-lineup .collection-image img {
+      max-width: 200px;
+      transform: rotate(-28deg);
+    }
+
+    .cnb-lineup .cnb-button-container {
+      margin-top: 30px;
+    }
+
+    @media only screen and (min-width: 990px) {
+      .cnb-lineup {
+        padding-top: 110px;
+        padding-bottom: 180px;
+      }
+
+      .cnb-lineup .grid--1-col .grid__item:first-of-type {
+        max-width: calc(var(--first-column-width) - var(--grid-desktop-horizontal-spacing) / 2);
+      }
+
+      .cnb-lineup .grid--1-col .grid__item:last-of-type {
+        max-width: calc((100% - var(--first-column-width)) - var(--grid-desktop-horizontal-spacing) / 2);
+      }
+
+      .cnb-lineup .cnb-column_inner {
+        flex-wrap: nowrap;
+      }
+
+      .cnb-lineup .collection-image {
+        order: initial;
+      }
+
+      .cnb-lineup .cnb-button-container {
+        margin-top: 60px;
+      }
+    }
+  </style>
+  <div class="cnb-lineup cnb-section">
+    <div class="page-width cnb-container">
+      <div class="grid grid--1-col">
+        <div class="grid__item">
+          <div class="cnb-column_image">
+            {% render 'cnb-image', media: section.settings.column_image %}
+          </div>
+        </div>
+        <div class="grid__item">
+          <h2 class="cnb-column_title">{{ section.settings.column_title }}</h2>
+          <div class="cnb-column_content">
+            {{ section.settings.column_content }}
+          </div>
+        </div>
+      </div>
+      <h2 class="cnb-section_title center">{{ section.settings.section_title }}</h2>
+      <div class="grid grid--2-col grid--1-col-tablet-down">
+          {% for collection in section.settings.collections %}
+            <div class="grid__item">
+              <div class="cnb-column_inner color-{{ section.settings.lineup_color_scheme }}">
+                <div class="cnb-lineup_content">
+                    <h3 class="collection-title">{{ collection.title }}</h3>
+                    <p class="collection-owner">{{ collection.metafields.cannabals.vendor }}</p>
+
+                    {% if collection.description != blank %}
+                    <div class="collection-description">
+                        {{ collection.description | strip_html }}
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="collection-image">
+                  <img src="{{ collection.image | img_url: '360x360' }}" alt="{{ collection.title }}">
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+      </div>
+
+      <div class="cnb-button-container center">
+        <a href="{{ section.settings.button_link }}" class="button button--primary center">
+          {{ section.settings.button_text }}
+        </a>
+      </div>
+    </div>
+  </div>
+  {% schema %}
+  {
+    "name": "Peep the Lineups",
+    "settings": [
+      {
+        "type": "header",
+        "content": "First Row Setting"
+      },
+      {
+        "type": "image_picker",
+        "id": "column_image",
+        "label": "Column Image"
+      },
+      {
+        "type": "text",
+        "id": "column_title",
+        "label": "Column Title"
+      },
+      {
+        "type": "richtext",
+        "id": "column_content",
+        "label": "Column Content"
+      },
+      {
+        "type": "header",
+        "content": "Peep the Lineup",
+      },
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section Title",
+        "default": "Peep the Lineup"
+      },
+      {
+        "type": "collection_list",
+        "id": "collections",
+        "label": "Collections",
+        "limit": 6
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "Shop Now"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link",
+        "default": "/collections/all"
+      },
+      {
+        "type": "header",
+        "content": "Styling"
+      },
+      {
+        "type": "color_scheme",
+        "id": "lineup_color_scheme",
+        "label": "Lineup Color Scheme",
+        "default": "scheme-3"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Peep the Lineups",
+        "category": "Cannabals"
+      }
+    ]
+  }
+  {% endschema %}
