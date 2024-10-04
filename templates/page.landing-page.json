@@ -11,13 +11,27 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "cnb_hero_Ye9Kn7": {
+      "type": "cnb-hero",
+      "settings": {
+        "hero_title": "Turn up the flavor, New York!",
+        "hero_description": "Partner with us to give your customers the perfect mix of chill and get lit moments they deserve!.",
+        "button_text": "Shop Now",
+        "button_link": "shopify://collections/all",
+        "bg_background_color": "",
+        "desktop_content_alignment": "center",
+        "color_scheme": ""
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "cnb_hero_Ye9Kn7"
   ]
 }
