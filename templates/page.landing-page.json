@@ -203,6 +203,33 @@
         "padding_top": 80,
         "padding_bottom": 80
       }
+    },
+    "newsletter_m3CCYA": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_86nhHj": {
+          "type": "heading",
+          "settings": {
+            "heading": "FLAVOR-PACKED DEALS JUST FOR YOU",
+            "heading_size": "hxl"
+          }
+        },
+        "email_form_CihPpw": {
+          "type": "email_form",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "heading_86nhHj",
+        "email_form_CihPpw"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
@@ -212,6 +239,7 @@
     "cnb_featured_puffs_JWL3bb",
     "cnb_cones_MhenNf",
     "image_with_text_zDCKTw",
-    "collapsible_content_8EMnPK"
+    "collapsible_content_8EMnPK",
+    "newsletter_m3CCYA"
   ]
 }
